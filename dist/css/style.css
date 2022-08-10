@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -13,16 +14,17 @@ body {
   height: 100vh;
   background: linear-gradient(145deg, rgb(0, 15, 83) 0%, rgb(39, 0, 48) 100%);
   background-size: 200% 200%;
+  font-family: "Roboto", sans-serif;
   animation: bgAnime 5s ease-in-out infinite;
 }
 
-.modalBlock {
+.modal-block {
   position: fixed;
   width: 100%;
   height: 100vh;
   z-index: 1000;
 }
-.modalBlock .start-box {
+.modal-block .start-box {
   position: absolute;
   width: 400px;
   max-width: 85%;
@@ -35,11 +37,11 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
 }
-.modalBlock .start-box h1 {
+.modal-block .start-box h1 {
   padding: 20px 0 30px;
   color: #fff;
 }
-.modalBlock .start-box p {
+.modal-block .start-box p {
   width: 80%;
   margin: auto;
   padding-bottom: 40px;
@@ -50,18 +52,18 @@ body {
   color: #fff;
 }
 @media screen and (max-width: 414px) {
-  .modalBlock .start-box p {
+  .modal-block .start-box p {
     line-height: 30px;
   }
 }
-.modalBlock .start-box ul {
+.modal-block .start-box ul {
   display: flex;
   justify-content: space-between;
   width: 80%;
   margin: auto;
   padding-bottom: 30px;
 }
-.modalBlock .start-box ul li {
+.modal-block .start-box ul li {
   width: 30%;
   padding: 10px 0;
   border: solid 1px #fff;
@@ -70,11 +72,11 @@ body {
   color: #fff;
   cursor: pointer;
 }
-.modalBlock .start-box ul .checked {
+.modal-block .start-box ul .checked {
   background-color: #fff;
   color: #000;
 }
-.modalBlock .start-box button {
+.modal-block .start-box button {
   width: 200px;
   height: 60px;
   background-color: transparent;
@@ -85,11 +87,11 @@ body {
   cursor: pointer;
   transition: all 0.2s ease-in-out;
 }
-.modalBlock .start-box button:hover {
+.modal-block .start-box button:hover {
   background-color: #fff;
   color: #000;
 }
-.modalBlock .finish-box {
+.modal-block .finish-box {
   display: none;
   position: absolute;
   width: 400px;
@@ -103,17 +105,22 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
 }
-.modalBlock .finish-box p {
-  padding-top: 20px;
+.modal-block .finish-box__inner {
+  display: none;
+}
+.modal-block .finish-box__inner p {
+  padding-top: 10px;
   color: #fff;
 }
-.modalBlock .finish-box p:first-child {
+.modal-block .finish-box__inner p:first-child {
+  padding-top: 20px;
   font-size: 2.5rem;
 }
-.modalBlock .finish-box .finish-text {
+.modal-block .finish-box__inner .finish-text {
   font-size: 2rem;
 }
-.modalBlock .finish-box button {
+.modal-block .finish-box__inner button {
+  margin-top: 40px;
   width: 200px;
   height: 60px;
   background-color: transparent;
@@ -124,15 +131,15 @@ body {
   cursor: pointer;
   transition: all 0.2s ease-in-out;
 }
-.modalBlock .finish-box button:hover {
+.modal-block .finish-box__inner button:hover {
   background-color: #fff;
   color: #000;
 }
-.modalBlock .open {
+.modal-block .open {
   display: block;
   animation: modalOpen 0.8s ease-in-out forwards;
 }
-.modalBlock .close {
+.modal-block .close {
   animation: modalClose 0.8s ease-out 0.2s forwards;
 }
 

@@ -1,11 +1,13 @@
 import { svg01, svg02, svg03 } from './svg.js'
 
 const wrap = document.querySelector('.wrap');
-const modalBg = document.querySelector('.modalBlock')
+const modalBg = document.querySelector('.modal-block')
 const startModal = document.querySelector('.start-box');
 const finishModal = document.querySelector('.finish-box');
-const modalButton = document.querySelector('.startButton');
-const levelButton = document.querySelectorAll('.levelTab');
+const finishModalInner = document.querySelector('.finish-box__inner');
+const startButton = document.querySelector('.start-button');
+const finishButton = document.querySelector('.finish-button');
+const levelButton = document.querySelectorAll('.level-tab');
 const fireArray = [];
 
 const finishText = document.createElement('p');
@@ -85,7 +87,7 @@ for (const level of levelButton) {
 	level.addEventListener('click', tabSwitch, false);
 }
 
-modalButton.addEventListener('click', function () {
+startButton.addEventListener('click', function () {
 	while (startModal.lastChild) {
 		startModal.removeChild(startModal.lastChild);
 	}
@@ -141,5 +143,15 @@ startModal.addEventListener('animationend', function () {
 
 finishElm.addEventListener('animationend', function () {
 	finishModal.classList.add('open');
-	console.log(finishElm);
+	finishText.textContent = `${count}タップ`;
+	finishModalInner.insertBefore(finishText, finishButton);
+	wrap.style.zIndex = -1;
+});
+
+finishModal.addEventListener('animationend', function () {
+	finishModalInner.style.display = 'block';
+});
+
+finishButton.addEventListener('click', function () {
+	location.reload();
 });
