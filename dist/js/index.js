@@ -12,6 +12,12 @@ const fireArray = [];
 
 const finishText = document.createElement('p');
 finishText.classList.add('finish-text');
+const fbText = document.createElement('p');
+
+const budText = 'もう少し頑張ってみよう！';
+const averageText = 'いい感じ！もっと頑張ってみよう！';
+const goodText = 'すごいね！あと少しでパーフェクト！';
+const perfectText = '完璧！君は天才だね！'
 
 let count = 0;
 let level = 3000;
@@ -24,7 +30,7 @@ const borderTopRightMax = 50;
 const borderBottomLeftMax = 50;
 const borderBottomRightMax = 50;
 
-for (let i = 0; i < 10; i++) {
+for (let i = 0; i < 20; i++) {
 	const numTop = Math.floor(Math.random() * (max + 1 - min) + min),
 		numLeft = Math.floor(Math.random() * (max + 1 - min) + min);
 	const numTopLeft = Math.floor(Math.random() * (borderTopLeftMax + 1 - borderMin) + borderMin),
@@ -144,7 +150,17 @@ startModal.addEventListener('animationend', function () {
 finishElm.addEventListener('animationend', function () {
 	finishModal.classList.add('open');
 	finishText.textContent = `${count}タップ`;
+	if (count <= 5) {
+		fbText.textContent = budText;
+	} else if (count <= 15) {
+		fbText.textContent = averageText;
+	} else if (count <= 19) {
+		fbText.textContent = goodText;
+	} else if (count === 20) {
+		fbText.textContent = perfectText;
+	}
 	finishModalInner.insertBefore(finishText, finishButton);
+	finishModalInner.insertBefore(fbText, finishButton);
 	wrap.style.zIndex = -1;
 });
 

@@ -48,7 +48,7 @@ body {
   text-align: justify;
   text-justify: distribute;
   font-size: 0.9rem;
-  line-height: 37px;
+  line-height: 35px;
   color: #fff;
 }
 @media screen and (max-width: 414px) {
@@ -113,10 +113,11 @@ body {
   color: #fff;
 }
 .modal-block .finish-box__inner p:first-child {
-  padding-top: 20px;
+  padding: 30px 0;
   font-size: 2.5rem;
 }
 .modal-block .finish-box__inner .finish-text {
+  padding-bottom: 10px;
   font-size: 2rem;
 }
 .modal-block .finish-box__inner button {
@@ -333,11 +334,11 @@ main .wrap .ball .fire-box .pop03 {
   }
   58% {
     width: 10px;
-    height: 460px;
+    height: 400px;
   }
   100% {
     width: 400px;
-    height: 460px;
+    height: 400px;
   }
 }
 
